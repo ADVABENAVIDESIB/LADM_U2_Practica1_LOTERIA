@@ -169,7 +169,13 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.pausa.setOnClickListener {
-            Toast.makeText(this,binding.pausa.text.toString(), Toast.LENGTH_LONG).show()
+            var mensaje=""
+            if(play){
+                mensaje="Pausado"
+            }else{
+                mensaje="Reanudado"
+            }
+            Toast.makeText(this,mensaje, Toast.LENGTH_LONG).show()
             if (play){
                // binding.pausa.setText("PLAY")
                 binding.pausa.setCompoundDrawablesWithIntrinsicBounds(R.drawable.play, 0, 0, 0)
